@@ -1,0 +1,111 @@
+@import '../main';
+
+.input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__label {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+
+    &[data-required='true']:after {
+      color: $warning-color;
+      content: '*';
+      font-family: $alt-font;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__container {
+    margin-bottom: 1.6rem;
+    position: relative;
+    width: 100%;
+  }
+
+  &__input {
+    border: .1rem solid $gray-light;
+    border-radius: .7rem;
+    color: $input-color;
+    font-family: $base-font;
+    font-size: 1.6rem;
+    padding: 1.1rem 1rem;
+    width: 100%;
+
+    &::placeholder {
+      color: $gray-light;
+    }
+
+    &:focus {
+      outline-color: $input-active-color;
+    }
+  }
+
+  &__error {
+    border-color: $warning-color;
+    margin-bottom: 0;
+  }
+
+  &__select {
+    color: $input-color;
+    font-family: $base-font;
+    font-size: 1.6rem;
+    margin-bottom: 1.4rem;
+
+    &__control {
+      align-items: center;
+      border: .1rem solid $gray-light;
+      border-radius: .7rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      padding: .4rem .2rem;
+
+      &--is-focused,
+      &:focus {
+        outline: .2rem solid $input-active-color;
+        outline-offset: -0.1rem;
+      }
+    }
+
+    &__menu {
+      background: $light-color;
+      border-radius: .7rem;
+      box-shadow: 0 .4rem .9rem 0 rgba(0, 0, 0, .08);
+      margin-top: .6rem;
+      padding: .6rem;
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+    }
+
+    &__option {
+      background: $light-color;
+      border-radius: .7rem;
+      color: #555555;
+      cursor: pointer;
+      padding: 1rem;
+
+      &:hover, &--is-selected {
+        background: $base-color-ultralight;
+      }
+    }
+
+    &__single-value {
+      grid-column: 1/-1;
+      grid-row: 1/3;
+    }
+  }
+
+  &__pass-icon {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

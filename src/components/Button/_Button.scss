@@ -1,0 +1,46 @@
+@import '../main';
+
+.button {
+  border: solid .1rem $base-color;
+  border-radius: .7rem;
+  color: $light-color;
+  cursor: pointer;
+  font-family: $base-font;
+  font-size: 1.6rem;
+  line-height: 1.92rem;
+  margin: .8rem auto 2.4rem auto;
+  max-width: 32rem;
+  padding: 1.2rem;
+  transition: .3s;
+  width: 100%;
+
+  &:hover {
+    background: $base-color-light;
+    border-color: transparent;
+    box-shadow: 0 0 .6rem rgba($base-color-light, $alpha: .85);
+    color: $light-color;
+    transition: all ease-in-out .3s;
+  }
+
+  &:active {
+    background: $base-color-dark;
+    border-color: transparent;
+    box-shadow: 0 0 .6rem rgba($base-color-dark, $alpha: .85);
+    color: $light-color;
+  }
+
+  &:disabled {
+    background: $base-color-ultralight;
+    border-color: transparent;
+    color: $light-color;
+  }
+
+  &__default {
+    background: $base-color;
+  }
+
+  &__alt {
+    background: $light-color;
+    color: $base-color;
+  }
+}

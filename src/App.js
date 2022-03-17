@@ -1,8 +1,18 @@
+import { useState } from 'react';
+import Container from './components/Container/Container';
 
-function App() {
+import { AppContext } from './context/appContext';
+
+
+const App = () => {
+
+  const [loader, setLoader] = useState(false);
+
   return (
-    <h1>UI Devs</h1>
+    <AppContext.Provider value={ [loader, setLoader] }>
+      <Container />
+    </AppContext.Provider>
   );
-}
+};
 
 export default App;

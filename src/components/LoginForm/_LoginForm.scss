@@ -1,0 +1,13 @@
+@import '../main';
+
+.login {
+  @include forms;
+
+  a {
+    // align-self: center;
+    border-bottom: .1rem solid $base-color;
+    color: $base-color;
+    display: block;
+    text-align: center;
+  }
+}

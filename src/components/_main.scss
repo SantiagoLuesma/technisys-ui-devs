@@ -1,0 +1,98 @@
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+//Variables
+$base-color: #8a3879;
+$base-color-light: #a54f93;
+$base-color-dark: #78306b;
+$base-color-ultralight: #eccae5;
+$warning-color: #d42f1a;
+$warning-background-color: #fee7e9;
+$text-color: #3b3b3b;
+$input-color: #555555;
+$gray-light: #939393;
+$light-color: #fff;
+$input-active-color: #649fd6;
+$overlay-color: #ffffff85;
+$base-font: 'Lato', sans-serif;
+$logo-font: 'Rubik', sans-serif;
+$alt-font: 'Encode Sans', sans-serif;
+
+$breakpoints: (
+  medium: 768px,
+  extra-large: 1444px,
+);
+
+@mixin media-up($breakpoint) {
+  @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include media-up(medium) {
+    margin: 4rem 0;
+  }
+
+  @include media-up(extra-large) {
+    margin: 9.8rem 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 32.7rem;
+    width: 100%;
+
+    @include media-up(medium) {
+      margin: 3.2rem 0;
+    }
+
+    legend {
+      font-size: 2.4rem;
+      font-weight: bold;
+      margin-bottom: 3.2rem;
+
+      @include media-up(medium) {
+        font-size: 2.6rem;
+      }
+    }
+  }
+}
+
+//CSS reset
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: $base-font;
+  min-height: 100vh;
+  overflow-y: hidden;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  overflow-x: hidden;
+  background-color: $light-color;
+  color: $text-color;
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}

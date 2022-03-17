@@ -1,0 +1,19 @@
+@import '../main';
+
+.loader-container {
+  background: $overlay-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+
+  &__icon {
+    height: 77px;
+    width: 77px;
+  }
+}
